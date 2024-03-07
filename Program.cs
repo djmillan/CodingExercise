@@ -1,8 +1,8 @@
 ﻿namespace CodingExercise
 {
-    internal class Program
+    internal class Solution
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             try
             {
@@ -27,20 +27,27 @@
                 {
                     Console.Write($"{i} ");
                 }
-                for (int i = 0; i < nums.Length - 1; i++)
+                TwoSum(nums, target);
+                Console.WriteLine(nums);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public int[] TwoSum(int[] nums, int target)
+        {
+            for (int i = 0; i < nums.Length - 1; i++)
+            {
+                for (int j = i + 1; j < nums.Length; j++)
                 {
-                    for(int j = i + 1; j < nums.Length; j++)
-                    {
                     if (nums[i] + nums[j] == target)
                     {
-                        Console.WriteLine($"\n[{i},{j}]");
+                        return new int[] { i, j };
                     }
-                } 
+                }
             }
-        }catch (Exception ex)
-        {
-            Console.WriteLine(ex.ToString());
-            }
+            throw new ArgumentException("No solution.");
         }
     }
 }
