@@ -28,14 +28,14 @@
                     Console.Write($"{i} ");
                 }
                 TwoSum(nums, target);
-                Console.WriteLine(nums);
+                Console.WriteLine($"\n");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
         }
-        public int[] TwoSum(int[] nums, int target)
+        public static int[] TwoSum(int[] nums, int target)
         {
             for (int i = 0; i < nums.Length - 1; i++)
             {
